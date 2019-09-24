@@ -13,6 +13,9 @@
 		CBC0435D233A602A0074C9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC0435B233A602A0074C9F1 /* Main.storyboard */; };
 		CBC0435F233A602D0074C9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC0435E233A602D0074C9F1 /* Assets.xcassets */; };
 		CBC04362233A602D0074C9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC04360233A602D0074C9F1 /* LaunchScreen.storyboard */; };
+		CBC0436A233A62180074C9F1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04369233A62180074C9F1 /* SecondViewController.swift */; };
+		CBC0436C233A63940074C9F1 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436B233A63940074C9F1 /* AnimationManager.swift */; };
+		CBC0436E233A63B40074C9F1 /* AnimatedTransitioningType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CBC0435E233A602D0074C9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBC04361233A602D0074C9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBC04363233A602D0074C9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC04369233A62180074C9F1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CBC0436B233A63940074C9F1 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioningType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				CBC0435E233A602D0074C9F1 /* Assets.xcassets */,
 				CBC04360233A602D0074C9F1 /* LaunchScreen.storyboard */,
 				CBC04363233A602D0074C9F1 /* Info.plist */,
+				CBC04369233A62180074C9F1 /* SecondViewController.swift */,
+				CBC0436B233A63940074C9F1 /* AnimationManager.swift */,
+				CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */,
 			);
 			path = CustomTransitionExperiment;
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC0436A233A62180074C9F1 /* SecondViewController.swift in Sources */,
 				CBC0435A233A602A0074C9F1 /* ViewController.swift in Sources */,
 				CBC04356233A602A0074C9F1 /* AppDelegate.swift in Sources */,
+				CBC0436E233A63B40074C9F1 /* AnimatedTransitioningType.swift in Sources */,
 				CBC04358233A602A0074C9F1 /* SceneDelegate.swift in Sources */,
+				CBC0436C233A63940074C9F1 /* AnimationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
