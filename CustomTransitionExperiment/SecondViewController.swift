@@ -45,3 +45,40 @@ class SecondViewController: UIViewController {
     */
 
 }
+
+//
+//extension ViewController: PresentationAnimatedTransitioning {
+//    func transitionAnimator(operation: PresentationOperation, duration: TimeInterval) -> UIViewPropertyAnimator {
+//        
+//        let initialFrame = CGRect(
+//            x: 0.0,
+//            y: fromVC.label.frame.minY,
+//            width: toView.bounds.width,
+//            height: toView.bounds.height
+//        )
+//        let finalFrame = transitionContext.finalFrame(for: toVC)
+//        
+//        toView.frame = initialFrame
+//        containerView.addSubview(toView)
+//        
+//        let timingParameters = UICubicTimingParameters(animationCurve: .easeInOut)
+//        let animator = UIViewPropertyAnimator(duration: 3.0, timingParameters: timingParameters)
+//        animator.addAnimations {
+//            toView.frame = finalFrame
+//        }
+//        animator.addCompletion { position in
+//            switch position {
+//            case .end:
+//                if transitionContext.transitionWasCancelled {
+//                    toView.removeFromSuperview()
+//                }
+//                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+//            case .current, .start:
+//                return
+//            @unknown default:
+//                return
+//            }
+//            self.viewPropertyAnimator = nil
+//        }
+//    }
+//}
