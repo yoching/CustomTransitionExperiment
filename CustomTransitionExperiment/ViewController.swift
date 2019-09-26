@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let panGestureRecognizer = UIPanGestureRecognizer()
+    
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBAction func buttonTapped(_ sender: Any) {
-        
+        self.presentModalView()
+    }
+    
+    @objc private func handlePan(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            presentModalView()
+        }
+    }
+    
+    private func presentModalView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "SecondViewController") as! SecondViewController
         
@@ -24,7 +37,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        panGestureRecognizer.addTarget(self, action: #selector(handlePan(_:)))
+        bottomView.addGestureRecognizer(panGestureRecognizer)
     }
 
 }
@@ -39,5 +55,23 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return AnimationManager(transitionType: .dismissal)
+    }
+    
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning)
+        -> UIViewControllerInteractiveTransitioning? {
+            let interactionController = PresentationInteractionController(operation: .presentation)
+            interactionController.wantsInteractiveStart = panGestureRecognizer.state == .began
+            return interactionController
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning)
+        -> UIViewControllerInteractiveTransitioning? {
+            let interactionController = PresentationInteractionController(operation: .dismissal)
+            if let secondViewController = self.presentedViewController as? SecondViewController {
+                interactionController.wantsInteractiveStart = secondViewController.panGestureRecognizer.state == .began
+            } else {
+                interactionController.wantsInteractiveStart = false
+            }
+            return interactionController
     }
 }

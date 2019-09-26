@@ -31,6 +31,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9X-xc-kfm">
+                                <rect key="frame" x="0.0" y="662" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -38,11 +42,16 @@
                             <constraint firstItem="DV1-2B-lgs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Epa-XP-h4d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZR8-qI-Zwr" secondAttribute="trailing" id="KuF-jc-wTo"/>
                             <constraint firstItem="DV1-2B-lgs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="S7G-vy-CAj"/>
+                            <constraint firstItem="i9X-xc-kfm" firstAttribute="trailing" secondItem="ZR8-qI-Zwr" secondAttribute="trailing" id="Weo-1W-GZa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZR8-qI-Zwr" secondAttribute="bottom" id="aNR-gv-Grp"/>
+                            <constraint firstItem="i9X-xc-kfm" firstAttribute="leading" secondItem="ZR8-qI-Zwr" secondAttribute="leading" id="b4V-WD-FSG"/>
+                            <constraint firstItem="i9X-xc-kfm" firstAttribute="bottom" secondItem="ZR8-qI-Zwr" secondAttribute="bottom" id="b9H-Qo-tel"/>
+                            <constraint firstItem="i9X-xc-kfm" firstAttribute="top" secondItem="ZR8-qI-Zwr" secondAttribute="top" id="jOX-Hf-QM1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="i9X-xc-kfm" id="DV1-Dc-SyG"/>
                         <outlet property="label" destination="ZR8-qI-Zwr" id="0hD-Nb-yp8"/>
                     </connections>
                 </viewController>
@@ -60,6 +69,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vy-hl-gRB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="rVg-rr-O1U"/>
                                 </constraints>

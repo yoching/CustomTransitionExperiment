@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB233B5A233BBE5D00764B49 /* InteractiveTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */; };
 		CBC04356233A602A0074C9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04355233A602A0074C9F1 /* AppDelegate.swift */; };
 		CBC04358233A602A0074C9F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04357233A602A0074C9F1 /* SceneDelegate.swift */; };
 		CBC0435A233A602A0074C9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04359233A602A0074C9F1 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionManager.swift; sourceTree = "<group>"; };
 		CBC04352233A602A0074C9F1 /* CustomTransitionExperiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitionExperiment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC04355233A602A0074C9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC04357233A602A0074C9F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				CBC04369233A62180074C9F1 /* SecondViewController.swift */,
 				CBC0436B233A63940074C9F1 /* AnimationManager.swift */,
 				CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */,
+				CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */,
 			);
 			path = CustomTransitionExperiment;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				CBC0435A233A602A0074C9F1 /* ViewController.swift in Sources */,
 				CBC04356233A602A0074C9F1 /* AppDelegate.swift in Sources */,
 				CBC0436E233A63B40074C9F1 /* AnimatedTransitioningType.swift in Sources */,
+				CB233B5A233BBE5D00764B49 /* InteractiveTransitionManager.swift in Sources */,
 				CBC04358233A602A0074C9F1 /* SceneDelegate.swift in Sources */,
 				CBC0436C233A63940074C9F1 /* AnimationManager.swift in Sources */,
 			);

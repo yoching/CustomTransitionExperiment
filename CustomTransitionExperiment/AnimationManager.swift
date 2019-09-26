@@ -10,7 +10,8 @@ import UIKit
 
 class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
 
-    fileprivate let transitionType: AnimatedTransitioningType
+    var viewPropertyAnimator: UIViewImplicitlyAnimating?
+    private let transitionType: AnimatedTransitioningType
     
     init(transitionType: AnimatedTransitioningType) {
         self.transitionType = transitionType
@@ -18,80 +19,12 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2.0
+        return 0.6
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         interruptibleAnimator(using: transitionContext).startAnimation()
-        
-//        let containerView = transitionContext.containerView
-//
-//        switch transitionType {
-//        case .presentation:
-//            interruptibleAnimator(using: transitionContext).startAnimation()
-//            //            presentationTransition(containerView, transitionContext: transitionContext)
-//
-//        case .dismissal:
-//            dismissalTransition(containerView, transitionContext: transitionContext)
-//
-//        }
-        
-    }
-    
-    private func presentationTransition(_ containerView: UIView, transitionContext: UIViewControllerContextTransitioning) {
-        
-        guard let toVC = transitionContext.viewController(forKey: .to),
-            let toView = transitionContext.view(forKey: .to),
-            let fromVC = transitionContext.viewController(forKey: .from) as? ViewController else {
-                return
-        }
-        
-        let initialFrame = CGRect(x: 0.0, y: fromVC.label.frame.minY, width: toView.bounds.width, height: toView.bounds.height)
-        let finalFrame = transitionContext.finalFrame(for: toVC)
-        
-        toView.frame = initialFrame
-        containerView.addSubview(toView)
-        
-        UIView.animate(
-            withDuration: transitionDuration(using: transitionContext),
-            animations: {
-                toView.frame = finalFrame
-
-//                transitionContext.viewController(forKey: .from)?.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-                
-        }, completion: { (finished: Bool) in
-            if transitionContext.transitionWasCancelled {
-                toView.removeFromSuperview()
-            }
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        })
-    }
- 
-    private func dismissalTransition(_ containerView: UIView, transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromView = transitionContext.view(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to) as? ViewController,
-            let toView = transitionContext.view(forKey: .to) else {
-                return
-        }
-        
-        containerView.insertSubview(toView, belowSubview: fromView)
-        
-        let finalFrame = CGRect(x: 0, y: toVC.label.frame.minY, width: fromView.bounds.width, height: fromView.bounds.height)
-        
-        UIView.animate(
-            withDuration: transitionDuration(using: transitionContext),
-            animations: {
-                fromView.frame = finalFrame
-                //                transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)?.view.transform = CGAffineTransform.identity
-        }, completion: { (finished: Bool) in
-            if !transitionContext.transitionWasCancelled {
-                fromView.removeFromSuperview()
-            }
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        })
-    }
-    
-    var viewPropertyAnimator: UIViewImplicitlyAnimating?
+     }
     
     func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
         
@@ -112,6 +45,10 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
         return animator
     }
     
+    func animationEnded(_ transitionCompleted: Bool) {
+        self.viewPropertyAnimator = nil
+    }
+    
     private func animatorWhenPresenting(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
         let containerView = transitionContext.containerView
         
@@ -128,23 +65,15 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toView)
         
         let timingParameters = UICubicTimingParameters(animationCurve: .easeInOut)
-        let animator = UIViewPropertyAnimator(duration: 3.0, timingParameters: timingParameters)
+        let animator = UIViewPropertyAnimator(
+            duration: transitionDuration(using: transitionContext),
+            timingParameters: timingParameters
+        )
         animator.addAnimations {
             toView.frame = finalFrame
         }
         animator.addCompletion { position in
-            switch position {
-            case .end:
-                if transitionContext.transitionWasCancelled {
-                    toView.removeFromSuperview()
-                }
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-            case .current, .start:
-                return
-            @unknown default:
-                return
-            }
-            self.viewPropertyAnimator = nil
+            transitionContext.completeTransition(position == .end)
         }
         
         return animator
@@ -165,23 +94,15 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
         let finalFrame = CGRect(x: 0, y: toVC.label.frame.minY, width: fromView.bounds.width, height: fromView.bounds.height)
         
         let timingParameters = UICubicTimingParameters(animationCurve: .easeInOut)
-        let animator = UIViewPropertyAnimator(duration: 3.0, timingParameters: timingParameters)
+        let animator = UIViewPropertyAnimator(
+            duration: transitionDuration(using: transitionContext),
+            timingParameters: timingParameters
+        )
         animator.addAnimations {
             fromView.frame = finalFrame
         }
         animator.addCompletion { position in
-            switch position {
-            case .end:
-                if !transitionContext.transitionWasCancelled {
-                    fromView.removeFromSuperview()
-                }
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-            case .current, .start:
-                return
-            @unknown default:
-                return
-            }
-            self.viewPropertyAnimator = nil
+            transitionContext.completeTransition(position == .end)
         }
         
         return animator
