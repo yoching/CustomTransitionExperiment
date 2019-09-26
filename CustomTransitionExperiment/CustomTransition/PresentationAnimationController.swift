@@ -1,5 +1,5 @@
 //
-//  AnimationManager.swift
+//  PresentationAnimationController.swift
 //  CustomTransitionExperiment
 //
 //  Created by Yoshikuni Kato on 24/09/2019.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
+class PresentationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
 
     var viewPropertyAnimator: UIViewImplicitlyAnimating?
-    private let transitionType: AnimatedTransitioningType
+    private let transitionType: AnimatedTransitionType
     
-    init(transitionType: AnimatedTransitioningType) {
+    init(transitionType: AnimatedTransitionType) {
         self.transitionType = transitionType
         super.init()
     }
@@ -54,7 +54,7 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
         
         guard let toVC = transitionContext.viewController(forKey: .to),
             let toView = transitionContext.view(forKey: .to),
-            let fromVC = transitionContext.viewController(forKey: .from) as? ViewController else {
+            let fromVC = transitionContext.viewController(forKey: .from) as? FirstViewController else {
                 fatalError()
         }
         
@@ -83,7 +83,7 @@ class AnimationManager: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         
         guard let fromView = transitionContext.view(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to) as? ViewController,
+            let toVC = transitionContext.viewController(forKey: .to) as? FirstViewController,
             let toView = transitionContext.view(forKey: .to) else {
                 fatalError()
         }

@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB233B5A233BBE5D00764B49 /* InteractiveTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */; };
+		CB233B5A233BBE5D00764B49 /* PresentationInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB233B59233BBE5D00764B49 /* PresentationInteractionController.swift */; };
 		CBC04356233A602A0074C9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04355233A602A0074C9F1 /* AppDelegate.swift */; };
 		CBC04358233A602A0074C9F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04357233A602A0074C9F1 /* SceneDelegate.swift */; };
-		CBC0435A233A602A0074C9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04359233A602A0074C9F1 /* ViewController.swift */; };
+		CBC0435A233A602A0074C9F1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04359233A602A0074C9F1 /* FirstViewController.swift */; };
 		CBC0435D233A602A0074C9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC0435B233A602A0074C9F1 /* Main.storyboard */; };
 		CBC0435F233A602D0074C9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC0435E233A602D0074C9F1 /* Assets.xcassets */; };
 		CBC04362233A602D0074C9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC04360233A602D0074C9F1 /* LaunchScreen.storyboard */; };
 		CBC0436A233A62180074C9F1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC04369233A62180074C9F1 /* SecondViewController.swift */; };
-		CBC0436C233A63940074C9F1 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436B233A63940074C9F1 /* AnimationManager.swift */; };
-		CBC0436E233A63B40074C9F1 /* AnimatedTransitioningType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */; };
+		CBC0436C233A63940074C9F1 /* PresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436B233A63940074C9F1 /* PresentationAnimationController.swift */; };
+		CBC0436E233A63B40074C9F1 /* AnimatedTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0436D233A63B40074C9F1 /* AnimatedTransitionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionManager.swift; sourceTree = "<group>"; };
+		CB233B59233BBE5D00764B49 /* PresentationInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationInteractionController.swift; sourceTree = "<group>"; };
 		CBC04352233A602A0074C9F1 /* CustomTransitionExperiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitionExperiment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC04355233A602A0074C9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC04357233A602A0074C9F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBC04359233A602A0074C9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBC04359233A602A0074C9F1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CBC0435C233A602A0074C9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBC0435E233A602D0074C9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBC04361233A602D0074C9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBC04363233A602D0074C9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBC04369233A62180074C9F1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		CBC0436B233A63940074C9F1 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
-		CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioningType.swift; sourceTree = "<group>"; };
+		CBC0436B233A63940074C9F1 /* PresentationAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAnimationController.swift; sourceTree = "<group>"; };
+		CBC0436D233A63B40074C9F1 /* AnimatedTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB508988233CD8FD0027CA58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBC0435B233A602A0074C9F1 /* Main.storyboard */,
+				CBC04359233A602A0074C9F1 /* FirstViewController.swift */,
+				CBC04369233A62180074C9F1 /* SecondViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB508989233CD90C0027CA58 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				CBC0436B233A63940074C9F1 /* PresentationAnimationController.swift */,
+				CB233B59233BBE5D00764B49 /* PresentationInteractionController.swift */,
+				CBC0436D233A63B40074C9F1 /* AnimatedTransitionType.swift */,
+			);
+			path = CustomTransition;
+			sourceTree = "<group>";
+		};
 		CBC04349233A602A0074C9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +86,11 @@
 			children = (
 				CBC04355233A602A0074C9F1 /* AppDelegate.swift */,
 				CBC04357233A602A0074C9F1 /* SceneDelegate.swift */,
-				CBC04359233A602A0074C9F1 /* ViewController.swift */,
-				CBC0435B233A602A0074C9F1 /* Main.storyboard */,
 				CBC0435E233A602D0074C9F1 /* Assets.xcassets */,
 				CBC04360233A602D0074C9F1 /* LaunchScreen.storyboard */,
 				CBC04363233A602D0074C9F1 /* Info.plist */,
-				CBC04369233A62180074C9F1 /* SecondViewController.swift */,
-				CBC0436B233A63940074C9F1 /* AnimationManager.swift */,
-				CBC0436D233A63B40074C9F1 /* AnimatedTransitioningType.swift */,
-				CB233B59233BBE5D00764B49 /* InteractiveTransitionManager.swift */,
+				CB508988233CD8FD0027CA58 /* View */,
+				CB508989233CD90C0027CA58 /* CustomTransition */,
 			);
 			path = CustomTransitionExperiment;
 			sourceTree = "<group>";
@@ -151,12 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC0436A233A62180074C9F1 /* SecondViewController.swift in Sources */,
-				CBC0435A233A602A0074C9F1 /* ViewController.swift in Sources */,
+				CBC0435A233A602A0074C9F1 /* FirstViewController.swift in Sources */,
 				CBC04356233A602A0074C9F1 /* AppDelegate.swift in Sources */,
-				CBC0436E233A63B40074C9F1 /* AnimatedTransitioningType.swift in Sources */,
-				CB233B5A233BBE5D00764B49 /* InteractiveTransitionManager.swift in Sources */,
+				CBC0436E233A63B40074C9F1 /* AnimatedTransitionType.swift in Sources */,
+				CB233B5A233BBE5D00764B49 /* PresentationInteractionController.swift in Sources */,
 				CBC04358233A602A0074C9F1 /* SceneDelegate.swift in Sources */,
-				CBC0436C233A63940074C9F1 /* AnimationManager.swift in Sources */,
+				CBC0436C233A63940074C9F1 /* PresentationAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

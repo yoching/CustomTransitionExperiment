@@ -1,5 +1,5 @@
 //
-//  InteractiveTransitionManager.swift
+//  PresentationInteractionController.swift
 //  CustomTransitionExperiment
 //
 //  Created by Yoshikuni Kato on 25/09/2019.
@@ -9,10 +9,10 @@
 import UIKit
 
 class PresentationInteractionController: UIPercentDrivenInteractiveTransition {
-    private let operation: AnimatedTransitioningType
+    private let operation: AnimatedTransitionType
     private var interactiveAreaHeight: CGFloat?
 
-    init(operation: AnimatedTransitioningType) {
+    init(operation: AnimatedTransitionType) {
         self.operation = operation
         super.init()
     }
@@ -26,14 +26,14 @@ class PresentationInteractionController: UIPercentDrivenInteractiveTransition {
         
         switch operation {
         case .presentation:
-            let firstVC = transitionContext.viewController(forKey: .from) as! ViewController
+            let firstVC = transitionContext.viewController(forKey: .from) as! FirstViewController
             interactiveAreaHeight = firstVC.bottomView.frame.minY
             firstVC.panGestureRecognizer.addTarget(self, action: #selector(handlePan(_:)))
             
         case .dismissal:
             let secondVC = transitionContext.viewController(forKey: .from) as! SecondViewController
             secondVC.panGestureRecognizer.addTarget(self, action: #selector(handlePan(_:)))
-            let firstVC = transitionContext.viewController(forKey: .to) as! ViewController
+            let firstVC = transitionContext.viewController(forKey: .to) as! FirstViewController
             interactiveAreaHeight = firstVC.bottomView.frame.minY
         }
     }

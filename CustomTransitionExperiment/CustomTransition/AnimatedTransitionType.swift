@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AnimatedTransitioningType {
+enum AnimatedTransitionType {
     case presentation
     case dismissal
 }

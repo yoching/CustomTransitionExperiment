@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstViewController.swift
 //  CustomTransitionExperiment
 //
 //  Created by Yoshikuni Kato on 24/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstViewController: UIViewController {
 
     let panGestureRecognizer = UIPanGestureRecognizer()
     
@@ -46,15 +46,14 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UIViewControllerTransitioningDelegate {
+extension FirstViewController: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return PresentationAnimationController(operation: .present)
-        return AnimationManager(transitionType: .presentation)
+        return PresentationAnimationController(transitionType: .presentation)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimationManager(transitionType: .dismissal)
+        return PresentationAnimationController(transitionType: .dismissal)
     }
     
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning)
